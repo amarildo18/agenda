@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            .espacamento{
+                margin-bottom: 10px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h1>Adicionar Contacto</h1>
+
+        <h:form style="margin-left:100px;margin-top:30px;">
+            <h:outputLabel styleClass="espacamento" style="font-weight:bold;font-size: 20px;">Preencha com os seus dados</h:outputLabel>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nome" styleClass="espacamento"/>
+                <h:inputText size="80" styleClass="espacamento" value="#{contactoMBean.contacto.nome}" />
+
+                <h:outputLabel value="Sobrenome" styleClass="espacamento"/>
+                <h:inputText size="80" styleClass="espacamento" value="#{contactoMBean.contacto.sobrenome}"/>
+
+                <h:outputLabel value="Email" styleClass="espacamento"/>
+                <h:inputText size="80" styleClass="espacamento" value="#{contactoMBean.contacto.email}"/>
+
+                <h:outputLabel value="Telefone" styleClass="espacamento"/>
+                <h:inputText size="40" styleClass="espacamento" value="#{contactoMBean.contacto.telefone}" />
+
+                <h:outputLabel value="Usuario" styleClass="espacamento"/>
+                <h:inputText size="40" styleClass="espacamento"/>
+
+                <h:outputLabel value="Senha" styleClass="espacamento"/>
+                <h:inputSecret size="40" styleClass="espacamento" />
+                
+                <h:commandButton value="Registar" style="margin-right: 200px;margin-left:200px;" action="#{contactoMBean.salvar()}"/>
+                <h:commandButton value="Fechar" />
+            </h:panelGrid>
+        </h:form>
+        
+    </h:body>
+</html>
+
