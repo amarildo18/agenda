@@ -5,14 +5,34 @@
  */
 package agenda.model;
 
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+
 /**
  *
  * @author amarildo.ferreira
  */
-public class Contacto {
+@Entity
+@Table(name="contacto")
+public class Contacto implements Serializable{
     
+    @Id
+    @Column(name="id_contacto", nullable=false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    @Column(name="nome_contacto", nullable=false, length = 45)
     private String nome;
+    @Column(name="sobrenome_contacto")
     private String sobrenome;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataNascimento;
     private String email;
     private String telefone;
     
